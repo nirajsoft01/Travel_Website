@@ -1,0 +1,4 @@
+Django>=3.2,<4.0  # Adjust the version as needed
+psycopg2-binary>=2.9.1,<3.0  # PostgreSQL adapter for Django
+pillow>=8.2,<9.0  # If you're working with images
+

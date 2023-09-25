@@ -1,0 +1,28 @@
+trigger:
+- master  # Set the branch to trigger the build on, e.g., 'main', 'develop', or a specific branch.
+
+pool:
+  vmImage: 'ubuntu-latest'  # Choose an appropriate build agent image.
+
+steps:
+- script: |
+    # Set up Python
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+
+    # Build and test Django application
+    python manage.py collectstatic --noinput
+    python manage.py runserver
+
+    # Publish build artifacts
+    mkdir $(Build.ArtifactStagingDirectory)/app
+    cp -r * $(Build.ArtifactStagingDirectory)/app
+  displayName: 'Build and Test Django App'
+
+- publish: $(Build.ArtifactStagingDirectory)/app
+  artifact: drop
+  displayName: 'Publish Artifact'
+
+# Define additional steps as needed for your specific deployment process.
+# For deployment to Azure Web App, you can add a deployment job here.
