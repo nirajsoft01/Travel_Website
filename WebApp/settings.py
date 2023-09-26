@@ -78,10 +78,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'webapp',
-        'USER' : 'postgres',
-        'PASSWORD' : '1857',
-        'HOST' : 'localhost'
-}
+        'USER': 'postgres',
+        'PASSWORD': '1857',
+        'HOST': 'traveluniverse-server.postgres.database.azure.com',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+    }
 }
 
 # Password validation
