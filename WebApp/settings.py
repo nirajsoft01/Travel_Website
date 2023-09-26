@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=)2pa3tsbhsvcf(e!!1m$lotq34@u4t5u4y-uoq6&6b-9my99a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','traveluniverse.azurewebsites.net']
 # Application definition
 
 INSTALLED_APPS = [
