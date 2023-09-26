@@ -24,5 +24,11 @@ steps:
   artifact: drop
   displayName: 'Publish Artifact'
 
-# Define additional steps as needed for your specific deployment process.
-# For deployment to Azure Web App, you can add a deployment job here.
+- script: |
+    # Run database migrations
+    python manage.py makemigrations
+    python manage.py migrate
+
+    # Optionally run syncdb if needed
+    python manage.py migrate --run-syncdb
+  displayName: 'Run Database Migrations'
