@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'webapp',
-        'USER': 'postgres',
-        'PASSWORD': '1857',
+        'USER': 'vximhjtwmy',             # Replace with your Azure PostgreSQL username
+        'PASSWORD': 'MV7405Z6J2TB51W7$',  # Replace with your Azure PostgreSQL password
         'HOST': 'traveluniverse-server.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS': {
@@ -87,6 +87,7 @@ DATABASES = {
         },
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
